@@ -1,0 +1,27 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '1.2.1'
+}
+
+group = 'ru.clevertec'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation 'org.jacoco:org.jacoco.core:0.8.12'
+}
+
+gradlePlugin {
+    plugins {
+        jacocoReportPlugin {
+            id = 'ru.clevertec.jacoco-report'
+            implementationClass = 'ru.clevertec.gradle.JacocoReportPlugin'
+            displayName = 'JaCoCo Report Plugin'
+            description = 'A plugin to generate JaCoCo test coverage reports'
+        }
+    }
+}
