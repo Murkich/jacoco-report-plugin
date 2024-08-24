@@ -1,10 +1,10 @@
 plugins {
     id 'java-gradle-plugin'
-    id 'com.gradle.plugin-publish' version '1.2.1'
+    id 'com.gradle.plugin-publish' version '1.2.0'
 }
 
-group = 'ru.clevertec'
-version = '1.0-SNAPSHOT'
+group = 'io.github.murkich'
+version = '1.0.0'
 
 repositories {
     mavenCentral()
@@ -16,12 +16,15 @@ dependencies {
 }
 
 gradlePlugin {
+    website = 'https://github.com/Murkich/jacoco-report-plugin'
+    vcsUrl = 'https://github.com/Murkich/jacoco-report-plugin.git'
     plugins {
         jacocoReportPlugin {
-            id = 'ru.clevertec.jacoco-report'
-            implementationClass = 'ru.clevertec.gradle.JacocoReportPlugin'
+            id = 'io.github.murkich.jacoco-report'
             displayName = 'JaCoCo Report Plugin'
             description = 'A plugin to generate JaCoCo test coverage reports'
+            tags.set(['jacoco', 'test', 'coverage', 'report'])
+            implementationClass = 'io.github.murkich.gradle.JacocoReportPlugin'
         }
     }
 }

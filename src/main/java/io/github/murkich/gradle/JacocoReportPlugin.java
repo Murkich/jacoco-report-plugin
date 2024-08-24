@@ -1,4 +1,4 @@
-package ru.clevertec.gradle;
+package io.github.murkich.gradle;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
